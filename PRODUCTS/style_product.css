@@ -318,19 +318,18 @@ footer {
         align-items: center;
     }
 }
-.product-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    font-size: 0.9rem;
+.product-description {
+    display: none;
     margin-top: 0.5rem;
-    line-height: 1.4;
+    font-size: 0.95rem;
     color: #444;
+    line-height: 1.6;
 }
 
-.product-details.show {
-    max-height: 200px; /* adjust height as needed */
+.product-description.show {
+    display: block;
 }
+
 .product-inner {
     display: flex;
     align-items: flex-start;
