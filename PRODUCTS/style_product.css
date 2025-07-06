@@ -319,3 +319,17 @@ footer {
         align-items: center;
     }
 }
+.product-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.product-details.show {
+    max-height: 200px; /* adjust height as needed */
+}
+

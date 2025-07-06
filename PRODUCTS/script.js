@@ -29,8 +29,9 @@ function parseCSV(csv) {
         });
         product.featured = product.featured?.toLowerCase() === 'true';
         return product;
-    });
+    }).filter(product => product.name && product.image && product.description); // 💥 filter out blanks
 }
+
 
 
 function displayProducts(products) {
