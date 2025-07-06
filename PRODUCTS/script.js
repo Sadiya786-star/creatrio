@@ -69,7 +69,7 @@ function createProductCard(product, index) {
             <div class="product-details">
                 <h2>${product.name}</h2>
                 <button class="toggle-btn" onclick="toggleDescription(this)">View Description</button>
-                <div class="product-description" style="display: none;">
+                <div class="product-description">
                     <p>${product.description}</p>
                     <div class="price-container">
                         <span class="price">${product.price}</span>
