@@ -100,14 +100,12 @@ function animateCards() {
 
 function toggleDescription(button) {
     const desc = button.nextElementSibling;
-    if (desc.style.display === 'none') {
-        desc.style.display = 'block';
-        button.textContent = 'Hide Description';
-    } else {
-        desc.style.display = 'none';
-        button.textContent = 'View Description';
-    }
+    if (!desc) return;
+
+    desc.classList.toggle('show');
+    button.textContent = desc.classList.contains('show') ? 'Hide Description' : 'View Description';
 }
+
 
 
 function displayErrorMessage() {
