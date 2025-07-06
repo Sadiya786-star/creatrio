@@ -29,7 +29,7 @@ function parseCSV(csv) {
         });
         product.featured = product.featured?.toLowerCase() === 'true';
         return product;
-    }).filter(product => product.name && product.image && product.description); // 💥 filter out blanks
+    }).filter(p => p.name && p.image && p.description);
 }
 
 
@@ -62,22 +62,25 @@ function createProductCard(product, index) {
     card.style.transform = 'translateY(20px)';
 
     card.innerHTML = `
-        <div class="product-image" style="margin-left: 2rem;">
-            <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'">
-        </div>
-        <div class="product-details">
-            <h2>${product.name}</h2>
-            <button class="toggle-btn" onclick="toggleDescription(this)">View Description</button>
-            <div class="product-description" style="display: none;">
-                <p>${product.description}</p>
-                <div class="price-container">
-                    <span class="price">${product.price}</span>
-                    ${product.featured ? '<span class="featured-badge">✨ Featured</span>' : ''}
-                </div>
-                ${product.category ? `<div class="category">${product.category}</div>` : ''}
-            </div>
-        </div>
-    `;
+  <div class="product-inner">
+      <div class="product-image" style="margin-left: 2rem;">
+          <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'">
+      </div>
+      <div class="product-details">
+          <h2>${product.name}</h2>
+          <button class="toggle-btn" onclick="toggleDescription(this)">View Description</button>
+          <div class="product-description" style="display: none;">
+              <p>${product.description}</p>
+              <div class="price-container">
+                  <span class="price">${product.price}</span>
+                  ${product.featured ? '<span class="featured-badge">✨ Featured</span>' : ''}
+              </div>
+              ${product.category ? `<div class="category">${product.category}</div>` : ''}
+          </div>
+      </div>
+  </div>
+`;
+
 
     return card;
 }
