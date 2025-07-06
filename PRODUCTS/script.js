@@ -4,21 +4,34 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function loadProducts() {
+    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTmVGLelQlKm9DkRfXYTDTX8HhDdDgbnCTXcsPkIT5pP0ZpUYO3LB5hrKSCSBY40SSFzhDy0mHZkJ2f/pub?output=csv';
+
     try {
-        const response = await fetch('products.json');
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const products = await response.json();
+        const response = await fetch(sheetURL);
+        const text = await response.text();
+        const products = parseCSV(text);
         displayProducts(products);
-        
     } catch (error) {
         console.error('Failed to load products:', error);
         displayErrorMessage();
     }
 }
+
+function parseCSV(csv) {
+    const lines = csv.trim().split('\n');
+    const headers = lines[0].split(',');
+
+    return lines.slice(1).map(row => {
+        const values = row.split(',');
+        const product = {};
+        headers.forEach((header, index) => {
+            product[header.trim()] = values[index]?.trim();
+        });
+        product.featured = product.featured?.toLowerCase() === 'true';
+        return product;
+    });
+}
+
 
 function displayProducts(products) {
     const container = document.getElementById('product-list');
