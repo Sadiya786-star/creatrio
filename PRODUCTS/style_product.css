@@ -350,8 +350,11 @@ footer {
 }
 
 .product-description p {
-  margin-bottom: 0.6rem;
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
+
 
 .category {
   display: inline-block;
@@ -360,7 +363,9 @@ footer {
 
 
 .product-description .category {
-  display: inline-block;
+  display: block;
   margin-top: 0.4rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: #5A4FCF;
 }
+
