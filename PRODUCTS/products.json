@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Low-Porosity Hair Care Routine",
+    "price": "₹60",
+    "image": "/assets/App-products/Low-porosity.png",
+    "description": "A beautifully designed pastel-themed digital planner specifically crafted for girls with low-porosity hair. Get the perfect care routine with aesthetic appeal!",
+    "category": "Beauty & Wellness",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Birthday Wish Website",
+    "price": "₹150",
+    "image": "/assets/App-products/birthday-wish.jpg",
+    "description": "A personalized birthday wishing microsite, designed with love and creativity. Make someone's special day even more memorable with a custom digital experience.",
+    "category": "Digital Services",
+    "featured": true
+  }
+]
