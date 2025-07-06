@@ -70,12 +70,12 @@ function createProductCard(product, index) {
                 <h2>${product.name}</h2>
                 <button class="toggle-btn" onclick="toggleDescription(this)">View Description</button>
                 <div class="product-description">
-                    <p>${product.description}</p>
+                    <p class="product-text">${product.description}</p>
+                    ${product.category ? `<div class="category">${product.category}</div>` : ''}
                     <div class="price-container">
                         <span class="price">${product.price}</span>
                         ${product.featured ? '<span class="featured-badge">✨ Featured</span>' : ''}
                     </div>
-                    ${product.category ? `<div class="category">${product.category}</div>` : ''}
                 </div>
             </div>
         </div>
@@ -83,6 +83,7 @@ function createProductCard(product, index) {
 
     return card;
 }
+
 
 
 

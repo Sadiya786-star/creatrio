@@ -368,4 +368,16 @@ footer {
   font-weight: 600;
   color: #5A4FCF;
 }
+.product-text {
+    display: block;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+}
+
+.category {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #6A4C93;
+}
 
