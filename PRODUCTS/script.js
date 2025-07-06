@@ -85,6 +85,7 @@ function createProductCard(product, index) {
 }
 
 
+
 function animateCards() {
     const cards = document.querySelectorAll('.product-card');
     
